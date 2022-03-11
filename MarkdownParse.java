@@ -10,14 +10,8 @@ public class MarkdownParse {
         // find the next [, then find the ], then find the (, then take up to
         // the next )
         int currentIndex = 0;
-<<<<<<< HEAD
         System.out.println(currentIndex);
         int lastClosedParen = markdown.lastIndexOf(")");
-=======
-        System.outprintln(curretIndex);
-        int lastClosedParen = markdown.lastIndexOf(")");
-        boolean carrotLink = false;
->>>>>>> a302cba020730df347c8f2b9cec99a7ad0361b4d
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextOpeCarrot = markdown.indexOf("<", currentIndex);
@@ -32,21 +26,10 @@ public class MarkdownParse {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
             currentIndex = closeParen + 1;
-<<<<<<< HEAD
             System.out.println(currentIndex);
             if (closeParen == lastCloseParen){
                 break;
             }
-=======
-             System.outprintln(curretIndex);
-             if (closeParen == lastClosedParen){
-                 break;
-             }
-             if(carrotLink){
-                 currentIndex = nextCloseCarrot + 1;
-             }
-
->>>>>>> a302cba020730df347c8f2b9cec99a7ad0361b4d
         }
         return toReturn;
     }
